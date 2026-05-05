@@ -20,6 +20,6 @@ from genre.views import GenreCreateListView,GenreRetrieveUpdateDestroyView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('genre/', GenreCreateListView.as_view(),name='create-list-genre')
+    path('genre/', GenreCreateListView.as_view(),name='create-list-genre'),
     path('genre/<int:pk>', GenreRetrieveUpdateDestroyView.as_view(), name='update-delete-genre'),
 ]
