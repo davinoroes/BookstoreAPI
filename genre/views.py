@@ -20,3 +20,15 @@ class GenreCreateListView(generics.ListCreateAPIView):
 class GenreRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Genre.objects.all()
     serializer_class = GenreModelSerializer
+
+    def get(self, request, *args, **kwargs):
+        print(f'listando genero especifico - {request.data}')
+        return super().get(request, *args, **kwargs)
+    
+    def put(self, request, *args, **kwargs):
+        print(f'editando genero especifico - id({kwargs.get('pk')})')
+        return super().put(request, *args, **kwargs)
+    
+    def delete(self, request, *args, **kwargs):
+        print(f'deletando genero especifico - id({kwargs.get('pk')})')
+        return super().delete(request, *args, **kwargs)
