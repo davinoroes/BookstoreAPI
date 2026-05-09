@@ -18,3 +18,15 @@ class BookCreateListView(generics.ListCreateAPIView):
 class BookRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Book.objects.all()
     serializer_class = BookSerializer
+
+    def get(self, request, *args, **kwargs):
+        print(f'listando genero especifico')
+        return super().get(request, *args, **kwargs)
+    
+    def put(self, request, *args, **kwargs):
+        print(f'editando genero especifico - id({kwargs.get('pk')})')
+        return super().put(request, *args, **kwargs)
+    
+    def delete(self, request, *args, **kwargs):
+        print(f'deletando genero especifico - id({kwargs.get('pk')})')
+        return super().delete(request, *args, **kwargs)
