@@ -22,7 +22,7 @@ class GenreRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = GenreModelSerializer
 
     def get(self, request, *args, **kwargs):
-        print(f'listando genero especifico - {request.data}')
+        print(f'listando genero especifico')
         return super().get(request, *args, **kwargs)
     
     def put(self, request, *args, **kwargs):
