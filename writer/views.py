@@ -18,3 +18,15 @@ class WriterRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Writer.objects.all()
     serializer_class = WriterSerializer
 
+    def get(self, request, *args, **kwargs):
+        print(f'listando escritor especifico')
+        return super().get(request, *args, **kwargs)
+    
+    def put(self, request, *args, **kwargs):
+        print(f'editando escritor especifico - id({kwargs.get('pk')})')
+        return super().put(request, *args, **kwargs)
+    
+    def delete(self, request, *args, **kwargs):
+        print(f'deletando escritor especifico - id({kwargs.get('pk')})')
+        return super().delete(request, *args, **kwargs)
+
